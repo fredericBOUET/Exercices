@@ -8,8 +8,10 @@
 body{
     background-image: linear-gradient(
         120deg,#f6d365,#8d359e);
+    background-repeat: no-repeat;
     color: white;
     font-family: 'Poppins','sans-serif';
+    min-width: 100%;
     min-height: 100vh;
 }
 header {
@@ -150,6 +152,9 @@ select{
     }
     .submit{
         display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
     }
 
     form{

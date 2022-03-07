@@ -97,6 +97,14 @@ a:hover{
     cursor: pointer;
 }
 
+.cv i{
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 .overlay{
     display: none;
     z-index: -2;
