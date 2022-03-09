@@ -11,9 +11,9 @@ const secret = document.querySelector('.secret')
 
 // song titles
 const songs = ["sugilite",'Bromance2-3DBOYZ',"JTEDETESTE(yungspoiler)",
-                "LapinCalin-EditThirdEye","FRONTLANE-NIGHTCORE-Nara"]
+                "LapinCalin-EditThirdEye","FRONTLANE-NIGHTCORE-Nara","Hellcat-nyluuUlis"]
 const titles = ["Sugilite - Lili⭑Castiglioni ","Bromance 2 - 3D BOYZ","JTE DETESTE (yungspoiler)",
-                "Lapin Calin - Edit Third Eye","FRONTLANE NIGHTCORE - Nara"]
+                "Lapin Calin - Edit Third Eye","FRONTLANE NIGHTCORE - Nara","Hellcat - Nyluu Feat Ulis"]
 
 const hiddenAudio = ["SECRETHIDDENSONG-AUDIODRIPCRYSTALCLUB"]
 const hiddenTitle = ["Audiodrip - crystalclub"]
