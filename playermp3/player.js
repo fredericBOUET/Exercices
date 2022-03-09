@@ -72,8 +72,8 @@ function prevSong(){
     songIndex--
     titleIndex--    
     if(songIndex < 0){
-        songIndex = songs.length - 2
-        titleIndex = titles.length - 2
+        songIndex = songs.length - 1
+        titleIndex = titles.length - 1
 
     }
     loadSong(songs[songIndex])
@@ -83,7 +83,7 @@ function prevSong(){
 function nextSong(){
     songIndex++
     titleIndex++
-    if(songIndex > songs.length-2){
+    if(songIndex > songs.length-1){
         songIndex = 0
         titleIndex = 0
     }
