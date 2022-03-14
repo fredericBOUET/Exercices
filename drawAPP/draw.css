@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu {
+    position: fixed;
+    top:0;
+    left: 0;
+}
+.fonction{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.menu, .fonction{
+    border-radius: 5px;
+    background-color: rgb(62, 48, 112);
+    border: 2px solid black;
+}
+.menu button, .fonction button{
+    border-radius: 10%;
+    padding: 2px;
+    border: none;
+    background-color: white;
+    font-size: 1.5em;
+    margin: 0.5em;
+}
+
+.brush button{
+    padding: 2px 6px;
+}
+
+.triangle button{
+    padding: 2px 5px;
+}
+
+.drip button {
+    padding: 2px 1px;
+}
+
+.paint button {
+    padding: 2px 2px;
+}
+
+.square button{
+    padding: 2px 4px;
+}
+
+.newone button {
+    padding: 2px 4px;
+}
+
+.pdf button {
+    padding: 2px 5px;
+}
