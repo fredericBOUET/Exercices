@@ -1,18 +1,17 @@
 window.addEventListener('load',()=>{
     let long;
     let lat;
-    let body = document.querySelector("body")
+    let note = config.note
     let temperatureDescription = document.querySelector('.temperature-description')
     let temperatureDegree = document.querySelector('.temperature-degree')
     let icon = document.querySelector('.icon')
     let locationTimezone = document.querySelector('.location-timezone')
-    let app = document.querySelector('.app')
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position =>{
             long = position.coords.longitude;
             lat = position.coords.latitude;
             
-            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=19bdd997e06d52e369060f740a8bb0e5`
+            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${note}`
                 fetch(api)
          //Fetching data from the API       
         .then(Response=>{
