@@ -1,4 +1,7 @@
 
+
+
+
 const body = document.querySelector('body')
 const svg = document.querySelector('.geometryContainer')
 const rectButton = document.querySelector('.spawnRectangle')
@@ -7,6 +10,7 @@ const circleButton = document.querySelector('.spawnCircle')
 const ellipseButton = document.querySelector('.spawnEllipse')
 const colors = document.querySelectorAll('.color')
 const save = document.querySelector('.Save')
+const reset = document.querySelector('.Reset')
 let isSelect = false
 const mouse = {
     x: undefined,
@@ -28,6 +32,39 @@ let compteur2 = 0
 let compteur3 = 0
 let compteur4 = 0
 let coordonate = ["ne","nw", "sw","se"] 
+
+
+
+// Retrieve the object from storage
+if (localStorage.getItem("o") != null) {
+    let retrievedObject = localStorage.getItem('o');
+    let oSave = JSON.parse(retrievedObject);
+    for (const classe in oSave) {
+        let div = document.createElement("div");
+        div.className=classe;
+        div.style.cssText= oSave[classe];
+        document.querySelector('body').appendChild(div);
+        let divNe = document.createElement("div");
+        let divNw = document.createElement("div");
+        let divSw = document.createElement("div");
+        let divSe = document.createElement("div");
+        divNe.className="resizer ne hidden";
+        divNw.className="resizer nw hidden";
+        divSw.className="resizer sw hidden";
+        divSe.className="resizer se hidden";
+        div.appendChild(divNe);
+        div.appendChild(divNw);
+        div.appendChild(divSw);
+        div.appendChild(divSe);
+      }
+    rects = Array.from(document.querySelectorAll(".rect"));
+    squares = Array.from(document.querySelectorAll(".square"));
+    circles = Array.from(document.querySelectorAll(".circle"));
+    ellipses = Array.from(document.querySelectorAll(".ellipse"));
+
+}
+
+
 function drawRect(){
     rect = document.createElement('div')
     rect.style.left = 258 + "px"
@@ -197,6 +234,7 @@ function startPosition(e){
         if (e.target.classList[0] === "el"){
             el = elements[index][index2]
             // console.log(el.getBoundingClientRect())
+            console.log(elements)
             const rect = el.getBoundingClientRect()
             el.style.left = rect.left - newX + "px"
             el.style.top = rect.top - newY + "px"
@@ -309,19 +347,23 @@ function showColor(e){
 }
 
 function saveIt(){
-   let elementsArray;
-   if(localStorage.getItem("rect") === null){
-       elementsArray = [];
-   }else{
-       elementsArray = JSON.parse(localStorage.getItem("rect"))
-   }
-   console.log(elementsArray)
-   elementsArray.push(rect)
-   localStorage.setItem("elementsArray", JSON.stringify(elementsArray))
+   let elementsArray = document.querySelectorAll(".el");
+   let o = new Object();
+
+   elementsArray.forEach(function (element) { 
+    o[element.classList.value]=element.style.cssText;
+       
+   });
+   localStorage.setItem('o', JSON.stringify(o));
+
 }
+function resetIt(){
 
+    localStorage.clear();
+ 
+ }
 save.addEventListener('click',saveIt)
-
+reset.addEventListener('click',resetIt)
 colors.forEach(color => {
         color.addEventListener('click',showColor)
 });
