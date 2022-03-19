@@ -1,7 +1,8 @@
-window.addEventListener('load',()=>{
+
+window.addEventListener('load',()=>{   
+    let apikey = note
     let long;
     let lat;
-    let note = config.note
     let temperatureDescription = document.querySelector('.temperature-description')
     let temperatureDegree = document.querySelector('.temperature-degree')
     let icon = document.querySelector('.icon')
@@ -11,7 +12,7 @@ window.addEventListener('load',()=>{
             long = position.coords.longitude;
             lat = position.coords.latitude;
             
-            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${note}`
+            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apikey}`
                 fetch(api)
          //Fetching data from the API       
         .then(Response=>{
