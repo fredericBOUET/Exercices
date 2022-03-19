@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 
+.geometryContainer {
+  position: relative;
+  height: 600px;
+  width: 1900px;
+  background: black;
+} */
+
+.el {
+  position: absolute;
+}
+
+#colorsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.color {
+  width: 25px;
+  height: 25px;
+  border: 2px solid black;
+}
+
+#red {
+  background-color: red;
+}
+#blue {
+  background-color: blue;
+}
+#green {
+  background-color: green;
+}
+#yellow {
+  background-color: yellow;
+}
+#pink {
+  background-color: pink;
+}
+#purple {
+  background-color: purple;
+}
+
+.resizer {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: black;
+  z-index: 2;
+}
+
+.nw {
+  top: -1px;
+  left: -1px;
+  cursor: nw-resize;
+}
+
+.ne {
+  top: -1px;
+  right: -1px;
+  cursor: ne-resize;
+}
+
+.sw {
+  bottom: -1px;
+  left: -1px;
+  cursor: sw-resize;
+}
+
+.se {
+  bottom: -1px;
+  right: -1px;
+  cursor: se-resize;
+}
